@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islaaaam_app/features/hadeth/view/hadeth_view.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/features/quran/view/quran_view.dart';
+import 'package:islaaaam_app/features/sebha/views/sepha_view.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -11,10 +12,11 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> pages = [QuranView(), HadethView()];
+  List<Widget> pages = [QuranView(), HadethView(), SephaView()];
   List<ImageProvider> images = [
     AssetImage("assets/image/Background.png"),
     AssetImage("assets/image/Background2.png"),
+    AssetImage("assets/image/Background3.png"),
   ];
   int curentindex = 0;
 
