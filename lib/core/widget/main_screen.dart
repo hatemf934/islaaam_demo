@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islaaaam_app/features/hadeth/view/hadeth_view.dart';
-import 'package:islaaaam_app/features/quran/view/buttom_navigator_bar.dart';
+import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/features/quran/view/quran_view.dart';
 
 class MainScreen extends StatefulWidget {

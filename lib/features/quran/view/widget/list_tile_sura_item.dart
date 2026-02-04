@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islaaaam_app/features/quran/view/sura_details.dart';
 
 class ListTileSuraItem extends StatelessWidget {
   const ListTileSuraItem({super.key, required this.numberOfSura});
@@ -7,18 +8,17 @@ class ListTileSuraItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, SuraDetails.id);
+      },
       child: ListTile(
         leading: Stack(
+          alignment: AlignmentGeometry.center,
           children: [
             Image.asset("assets/image/img_sur_number_frame.png"),
-            Positioned(
-              right: 20,
-              top: 10,
-              child: Text(
-                numberOfSura.toString(),
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
+            Text(
+              numberOfSura.toString(),
+              style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ],
         ),

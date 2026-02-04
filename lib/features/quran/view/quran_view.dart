@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islaaaam_app/features/quran/view/widget/card_sura_item.dart';
-import 'package:islaaaam_app/features/quran/view/widget/card_sura_list_view.dart';
 import 'package:islaaaam_app/features/quran/view/widget/custom_text_feild.dart';
-import 'package:islaaaam_app/features/quran/view/widget/list_view_sura.dart';
+import 'package:islaaaam_app/features/quran/view/widget/most_recently_section.dart';
+import 'package:islaaaam_app/features/quran/view/widget/sura_list_section.dart';
 
 class QuranView extends StatelessWidget {
   const QuranView({super.key});
@@ -15,25 +14,15 @@ class QuranView extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Center(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                 child: Image.asset('assets/image/Group 31.png', height: 200),
               ),
               CustomTextFiled(),
               SizedBox(height: 15),
-              Text(
-                "Most Recently",
-                style: TextStyle(
-                  color: Color(0xffFEFFE8),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+              MostRecentlySection(),
               SizedBox(height: 20),
-              CardSuraListView(),
-              SizedBox(height: 20),
-              Expanded(child: ListViewSura()),
+              Expanded(child: SuraListSection()),
             ],
           ),
         ),

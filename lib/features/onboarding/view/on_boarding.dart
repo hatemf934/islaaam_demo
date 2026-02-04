@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islaaaam_app/features/onboarding/widget/list_of_page_view.dart';
-import 'package:islaaaam_app/features/quran/view/buttom_navigator_bar.dart';
+import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
