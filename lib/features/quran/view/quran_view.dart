@@ -5,7 +5,6 @@ import 'package:islaaaam_app/features/quran/view/widget/sura_list_section.dart';
 
 class QuranView extends StatelessWidget {
   const QuranView({super.key});
-  static String id = "Quran_view";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +15,7 @@ class QuranView extends StatelessWidget {
           child: Column(
             children: [
               Center(
-                child: Image.asset('assets/image/Group 31.png', height: 200),
+                child: Image.asset('assets/image/Group 31.png', height: 170),
               ),
               CustomTextFiled(),
               SizedBox(height: 15),

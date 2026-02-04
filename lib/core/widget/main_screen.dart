@@ -12,6 +12,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List<Widget> pages = [QuranView(), HadethView()];
+  List<ImageProvider> images = [
+    AssetImage("assets/image/Background.png"),
+    AssetImage("assets/image/Background2.png"),
+  ];
   int curentindex = 0;
 
   @override
@@ -19,22 +23,21 @@ class _MainScreenState extends State<MainScreen> {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/image/Background.png"),
-          fit: BoxFit.fill,
-        ),
+        image: DecorationImage(image: images[curentindex], fit: BoxFit.fill),
       ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        bottomNavigationBar: ButtomNavigatorBar(
-          currentindex: curentindex,
-          onTap: (value) {
-            setState(() {
-              curentindex = value;
-            });
-          },
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          bottomNavigationBar: ButtomNavigatorBar(
+            currentindex: curentindex,
+            onTap: (value) {
+              setState(() {
+                curentindex = value;
+              });
+            },
+          ),
+          body: pages[curentindex],
         ),
-        body: pages[curentindex],
       ),
     );
   }
