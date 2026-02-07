@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islaaaam_app/features/sebha/views/widgets/sepha_image_section.dart';
-import 'package:islaaaam_app/features/sebha/views/widgets/sepha_title_section.dart';
+import 'package:islaaaam_app/features/sebha/presentation/views/widgets/sepha_image_section.dart';
+import 'package:islaaaam_app/features/sebha/presentation/views/widgets/sepha_title_section.dart';
 
 class SephaView extends StatelessWidget {
   const SephaView({super.key});

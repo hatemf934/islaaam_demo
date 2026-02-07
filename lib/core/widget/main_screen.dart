@@ -3,7 +3,7 @@ import 'package:islaaaam_app/features/hadeth/view/hadeth_view.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/features/quran/presentation/view/quran_view.dart';
 import 'package:islaaaam_app/features/radio/views/radio_view.dart';
-import 'package:islaaaam_app/features/sebha/views/sepha_view.dart';
+import 'package:islaaaam_app/features/sebha/presentation/views/sepha_view.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

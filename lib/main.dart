@@ -7,6 +7,7 @@ import 'package:islaaaam_app/core/widget/main_screen.dart';
 import 'package:islaaaam_app/features/quran/presentation/manager/search_sura/search_sura_cubit.dart';
 import 'package:islaaaam_app/features/quran/presentation/manager/get_recently_sura/get_recently_cubit.dart';
 import 'package:islaaaam_app/features/quran/presentation/manager/get_sura_cubit/get_sura_cubit.dart';
+import 'package:islaaaam_app/features/sebha/presentation/manager/sepha_cubit/sepha_cubit.dart';
 
 void main() {
   runApp(const IslaamApp());
@@ -23,6 +24,7 @@ class IslaamApp extends StatelessWidget {
         BlocProvider(create: (context) => GetSuraCubit()),
         BlocProvider(create: (context) => RecentSuraCubit()),
         BlocProvider(create: (context) => SearchSuraCubit()),
+        BlocProvider(create: (context) => SephaCubit()),
       ],
       child: ScreenUtilInit(
         designSize: Size(430, 932),
