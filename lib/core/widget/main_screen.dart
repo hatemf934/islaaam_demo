@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islaaaam_app/features/hadeth/view/hadeth_view.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
-import 'package:islaaaam_app/features/quran/view/quran_view.dart';
+import 'package:islaaaam_app/features/quran/presentation/view/quran_view.dart';
 import 'package:islaaaam_app/features/radio/views/radio_view.dart';
 import 'package:islaaaam_app/features/sebha/views/sepha_view.dart';
 

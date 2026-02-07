@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islaaaam_app/features/onboarding/view/on_boarding.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/core/widget/main_screen.dart';
+import 'package:islaaaam_app/features/quran/presentation/manager/search_sura/search_sura_cubit.dart';
+import 'package:islaaaam_app/features/quran/presentation/manager/get_recently_sura/get_recently_cubit.dart';
+import 'package:islaaaam_app/features/quran/presentation/manager/get_sura_cubit/get_sura_cubit.dart';
 
 void main() {
   runApp(const IslaamApp());
@@ -13,13 +18,25 @@ class IslaamApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: Onboarding.id,
-      routes: {
-        Onboarding.id: (context) => const Onboarding(),
-        ButtomNavigatorBar.id: (context) => const MainScreen(),
-      },
-      debugShowCheckedModeBanner: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => GetSuraCubit()),
+        BlocProvider(create: (context) => RecentSuraCubit()),
+        BlocProvider(create: (context) => SearchSuraCubit()),
+      ],
+      child: ScreenUtilInit(
+        designSize: Size(430, 932),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        child: MaterialApp(
+          initialRoute: Onboarding.id,
+          routes: {
+            Onboarding.id: (context) => const Onboarding(),
+            ButtomNavigatorBar.id: (context) => const MainScreen(),
+          },
+          debugShowCheckedModeBanner: false,
+        ),
+      ),
     );
   }
 }
