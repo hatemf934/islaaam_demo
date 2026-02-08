@@ -26,72 +26,28 @@ class _ButtomNavigatorBarState extends State<ButtomNavigatorBar> {
       unselectedItemColor: Color(0xff202020),
       onTap: widget.onTap,
       items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          activeIcon: Container(
-            width: 59,
-            height: 34,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(66),
-              color: Color(0xff20202099),
-            ),
-            child: Image.asset("assets/icon_bottom/Vector.png", scale: 2),
-          ),
-          icon: Image.asset("assets/icon_bottom/Vector.png", width: 24),
-          label: 'Quran',
-        ),
-        BottomNavigationBarItem(
-          activeIcon: Container(
-            width: 59,
-            height: 34,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(66),
-              color: Color(0xff20202099),
-            ),
-            child: Image.asset("assets/icon_bottom/ic_hadeth.png", scale: 2),
-          ),
-          icon: Image.asset("assets/icon_bottom/ic_hadeth.png", width: 24),
-          label: 'Hadeth',
-        ),
-        BottomNavigationBarItem(
-          activeIcon: Container(
-            width: 59,
-            height: 34,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(66),
-              color: Color(0xff20202099),
-            ),
-            child: Image.asset("assets/icon_bottom/ic_sebha.png", scale: 2),
-          ),
-          icon: Image.asset("assets/icon_bottom/ic_sebha.png", width: 24),
-          label: 'Hadeth',
-        ),
-        BottomNavigationBarItem(
-          activeIcon: Container(
-            width: 59,
-            height: 34,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(66),
-              color: Color(0xff20202099),
-            ),
-            child: Image.asset("assets/icon_bottom/ic_radio.png", scale: 2),
-          ),
-          icon: Image.asset("assets/icon_bottom/ic_radio.png", width: 24),
-          label: 'Hadeth',
-        ),
-        BottomNavigationBarItem(
-          activeIcon: Container(
-            width: 59,
-            height: 34,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(66),
-              color: Color(0xff20202099),
-            ),
-            child: Image.asset("assets/icon_bottom/ic_time.png", scale: 2),
-          ),
-          icon: Image.asset("assets/icon_bottom/ic_time.png", width: 24),
-          label: 'Hadeth',
-        ),
+        buildNavItem("assets/icon_bottom/Vector.png", "Quran"),
+        buildNavItem("assets/icon_bottom/ic_hadeth.png", "Hadeth"),
+        buildNavItem("assets/icon_bottom/ic_sebha.png", "Sepha"),
+        buildNavItem("assets/icon_bottom/ic_radio.png", "Radio"),
+        buildNavItem("assets/icon_bottom/ic_time.png", "Time"),
       ],
     );
   }
+}
+
+BottomNavigationBarItem buildNavItem(String path, String label) {
+  return BottomNavigationBarItem(
+    label: label,
+    icon: Image.asset(path, width: 24, color: Color(0xff202020)),
+    activeIcon: Container(
+      width: 59,
+      height: 34,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(66),
+        color: const Color(0x99202020),
+      ),
+      child: Image.asset(path, scale: 2.5, color: Colors.white),
+    ),
+  );
 }

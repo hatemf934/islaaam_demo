@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islaaaam_app/features/hadeth/view/hadeth_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islaaaam_app/features/hadeth/presentation/manager/get_hadeth/get_hadeth_cubit.dart';
+import 'package:islaaaam_app/features/hadeth/presentation/view/hadeth_view.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/features/quran/presentation/view/quran_view.dart';
 import 'package:islaaaam_app/features/radio/views/radio_view.dart';
@@ -35,6 +37,7 @@ class _MainScreenState extends State<MainScreen> {
           bottomNavigationBar: ButtomNavigatorBar(
             currentindex: curentindex,
             onTap: (value) {
+              BlocProvider.of<GetHadethCubit>(context).gethadeth();
               setState(() {
                 curentindex = value;
               });

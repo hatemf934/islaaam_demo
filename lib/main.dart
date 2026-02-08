@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:islaaaam_app/features/hadeth/presentation/manager/get_hadeth/get_hadeth_cubit.dart';
 import 'package:islaaaam_app/features/onboarding/view/on_boarding.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/core/widget/main_screen.dart';
@@ -25,6 +26,7 @@ class IslaamApp extends StatelessWidget {
         BlocProvider(create: (context) => RecentSuraCubit()),
         BlocProvider(create: (context) => SearchSuraCubit()),
         BlocProvider(create: (context) => SephaCubit()),
+        BlocProvider(create: (context) => GetHadethCubit()),
       ],
       child: ScreenUtilInit(
         designSize: Size(430, 932),

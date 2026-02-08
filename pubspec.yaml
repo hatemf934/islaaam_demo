@@ -71,6 +71,8 @@ flutter:
     - assets/files/quran_surahs/
     - assets/image/Background.png
     - assets/icon_bottom/
+    - assets/files/Hadeeth/
+    - assets/files/h_files_ordered/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
