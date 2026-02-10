@@ -8,6 +8,9 @@ import 'package:islaaaam_app/core/widget/main_screen.dart';
 import 'package:islaaaam_app/features/quran/presentation/manager/search_sura/search_sura_cubit.dart';
 import 'package:islaaaam_app/features/quran/presentation/manager/get_recently_sura/get_recently_cubit.dart';
 import 'package:islaaaam_app/features/quran/presentation/manager/get_sura_cubit/get_sura_cubit.dart';
+import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_or_reciters_cubit/radio_or_reciters_cubit.dart';
+import 'package:islaaaam_app/features/radio/presentation/views/manager/reciters_cubit/reciters_cubit.dart';
+import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_cubit/radio_cubit.dart';
 import 'package:islaaaam_app/features/sebha/presentation/manager/sepha_cubit/sepha_cubit.dart';
 
 void main() {
@@ -27,6 +30,9 @@ class IslaamApp extends StatelessWidget {
         BlocProvider(create: (context) => SearchSuraCubit()),
         BlocProvider(create: (context) => SephaCubit()),
         BlocProvider(create: (context) => GetHadethCubit()),
+        BlocProvider(create: (context) => RadioCubit()),
+        BlocProvider(create: (context) => RecitersCubit()),
+        BlocProvider(create: (context) => RadioOrRecitersCubit()),
       ],
       child: ScreenUtilInit(
         designSize: Size(430, 932),

@@ -4,7 +4,9 @@ import 'package:islaaaam_app/features/hadeth/presentation/manager/get_hadeth/get
 import 'package:islaaaam_app/features/hadeth/presentation/view/hadeth_view.dart';
 import 'package:islaaaam_app/core/widget/buttom_navigator_bar.dart';
 import 'package:islaaaam_app/features/quran/presentation/view/quran_view.dart';
-import 'package:islaaaam_app/features/radio/views/radio_view.dart';
+import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_or_reciters_cubit/radio_or_reciters_cubit.dart';
+import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_cubit/radio_cubit.dart';
+import 'package:islaaaam_app/features/radio/presentation/views/radio_view.dart';
 import 'package:islaaaam_app/features/sebha/presentation/views/sepha_view.dart';
 
 class MainScreen extends StatefulWidget {
@@ -38,6 +40,8 @@ class _MainScreenState extends State<MainScreen> {
             currentindex: curentindex,
             onTap: (value) {
               BlocProvider.of<GetHadethCubit>(context).gethadeth();
+              BlocProvider.of<RadioCubit>(context).getRadio();
+              BlocProvider.of<RadioOrRecitersCubit>(context).swapToRadio();
               setState(() {
                 curentindex = value;
               });

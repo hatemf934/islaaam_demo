@@ -41,6 +41,8 @@ dependencies:
   flutter_screenutil: ^5.9.3
   dio: ^5.9.1
   flutter_bloc: ^9.1.1
+  audioplayers: ^6.5.1
+  just_audio: ^0.10.5
 
 dev_dependencies:
   flutter_test:
