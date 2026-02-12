@@ -8,6 +8,8 @@ import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_or_
 import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_cubit/radio_cubit.dart';
 import 'package:islaaaam_app/features/radio/presentation/views/radio_view.dart';
 import 'package:islaaaam_app/features/sebha/presentation/views/sepha_view.dart';
+import 'package:islaaaam_app/features/time/presentation/manager/cubit/date_pray_cubit.dart';
+import 'package:islaaaam_app/features/time/presentation/views/time_view.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -17,12 +19,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> pages = [QuranView(), HadethView(), SephaView(), RadioView()];
+  List<Widget> pages = [
+    QuranView(),
+    HadethView(),
+    SephaView(),
+    RadioView(),
+    TimeView(),
+  ];
   List<ImageProvider> images = [
     AssetImage("assets/image/Background.png"),
     AssetImage("assets/image/Background2.png"),
     AssetImage("assets/image/Background3.png"),
     AssetImage("assets/image/Background4.png"),
+    AssetImage("assets/image/Background10.png"),
   ];
   int curentindex = 0;
 
@@ -39,6 +48,8 @@ class _MainScreenState extends State<MainScreen> {
           bottomNavigationBar: ButtomNavigatorBar(
             currentindex: curentindex,
             onTap: (value) {
+              BlocProvider.of<DatePrayCubit>(context).getTimePray();
+              BlocProvider.of<DatePrayCubit>(context).getTimePray();
               BlocProvider.of<GetHadethCubit>(context).gethadeth();
               BlocProvider.of<RadioCubit>(context).getRadio();
               BlocProvider.of<RadioOrRecitersCubit>(context).swapToRadio();

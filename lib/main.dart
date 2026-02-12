@@ -12,6 +12,7 @@ import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_or_
 import 'package:islaaaam_app/features/radio/presentation/views/manager/reciters_cubit/reciters_cubit.dart';
 import 'package:islaaaam_app/features/radio/presentation/views/manager/radio_cubit/radio_cubit.dart';
 import 'package:islaaaam_app/features/sebha/presentation/manager/sepha_cubit/sepha_cubit.dart';
+import 'package:islaaaam_app/features/time/presentation/manager/cubit/date_pray_cubit.dart';
 
 void main() {
   runApp(const IslaamApp());
@@ -33,6 +34,7 @@ class IslaamApp extends StatelessWidget {
         BlocProvider(create: (context) => RadioCubit()),
         BlocProvider(create: (context) => RecitersCubit()),
         BlocProvider(create: (context) => RadioOrRecitersCubit()),
+        BlocProvider(create: (context) => DatePrayCubit()),
       ],
       child: ScreenUtilInit(
         designSize: Size(430, 932),
